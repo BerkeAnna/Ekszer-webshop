@@ -19,10 +19,12 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -120,6 +122,7 @@ public class ShopListActivity extends AppCompatActivity {
         mItems.orderBy("ratedInfo", Query.Direction.DESCENDING).limit(qLimit).get().addOnSuccessListener(queryDocumentSnapshots -> {
             for(QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots){
                 ShoppingItem item = documentSnapshot.toObject(ShoppingItem.class);
+                item.setID(documentSnapshot.getId());
                 mItemsData.add(item);
             }
 
@@ -131,6 +134,19 @@ public class ShopListActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public void deleteItem(ShoppingItem item){
+        DocumentReference dokref = mItems.document(item._getID());
+
+        dokref.delete().addOnSuccessListener(success -> {
+            Log.d(LOG_TAG, "Deleted " + item._getID() + " " + item.getName());
+
+        })
+                .addOnFailureListener(failure -> {
+                    Toast.makeText(this, "Item " + item._getID() + " cannot be deleted", Toast.LENGTH_LONG).show();
+                });
+        queryData_price();
     }
 
     private void queryData_price(){
@@ -164,7 +180,7 @@ public class ShopListActivity extends AppCompatActivity {
         //mItemsData.clear();
         for(int i=0 ; i<itemList.length; i++){
             mItems.add(new ShoppingItem(itemList[i], itemInfo[i], itemPrice[i], itemsRating.getFloat(i,0),
-                    itemsImageResource.getResourceId(i, 0)));
+                    itemsImageResource.getResourceId(i, 0), 0));
         }
         itemsImageResource.recycle();
         //madapter.notifyDataSetChanged();
@@ -251,7 +267,7 @@ public class ShopListActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
 
     }
-    public void updateAlertIcon(){
+    public void updateAlertIcon(ShoppingItem item){
         cartItems = (cartItems+1);
         if(0 <cartItems){
             contentTextView.setText(String.valueOf(cartItems));
@@ -259,6 +275,11 @@ public class ShopListActivity extends AppCompatActivity {
             contentTextView.setText(String.valueOf(""));
 
         }
+        mItems.document(item._getID()).update("count", item.getCount()+1)
+                .addOnFailureListener( failure -> {
+                    Toast.makeText(this, "Item " + item._getID() + " cannot be updated", Toast.LENGTH_LONG).show();
+                });
+        queryData_price();
 
     }
 
