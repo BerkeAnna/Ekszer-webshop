@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Jewellery shop</string>
+    <string name="app_name">Jewelry shop</string>
     <string name="register">register</string>
     <string name="login">login</string>
     <string name="password">password</string>
