@@ -6,4 +6,9 @@
     android:toXDelta="0"
     />
 
+<rotate
+    android:fromDegrees="20"
+    android:pivotX="40"
+    />
+
 </set>
