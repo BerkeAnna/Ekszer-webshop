@@ -23,6 +23,7 @@
     //<string name="subtitle_detail_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices congue rutrum. Phasellus elementum ipsum ac convallis aliquam. Suspendisse eleifend eros a enim faucibus mollis. Nunc placerat, est vitae vestibulum blandit, dolor diam fringilla tellus, eu euismod mauris neque at neque.</string>
     <string name="LoginAnonim"></string>
     <string name="cancel_account">If you have an account, click the cancel button!</string>
+    <string name="buy">BUY</string>
 
     <string-array name="shopping_item_names">
     <item>Ring</item>
