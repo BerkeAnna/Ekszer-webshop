@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="nullamargin">0dp</dimen>
+    <dimen name="twentymargin">20dp</dimen>
+    <dimen name="textwidth">400dp</dimen>
+    <dimen name="textheight">40dp</dimen>
+</resources>

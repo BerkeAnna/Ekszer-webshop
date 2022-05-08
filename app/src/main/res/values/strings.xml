@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Jewellery shop</string>
+    <string name="register">register</string>
+    <string name="login">login</string>
+    <string name="password">password</string>
+    <string name="username">username</string>
+    <string name="registration">sign up</string>
+    <string name="register_rrr">Sign up</string>
+    <string name="username_reg">username</string>
+    <string name="firstname">firstname</string>
+    <string name="lastname">lastname</string>
+    <string name="passwordAgain">password again</string>
+    <string name="email">email</string>
+    <string name="sign_up">Sign up</string>
+    <string name="name">name</string>
+    <string name="email_address">email_address</string>
+    <string name="cancel">cancel</string>
+    <string name="item_placeholder">item_placeholder</string>
+    <string name="item_info_placeholder">item_info_placeholder</string>
+
+
+    <string name="title_placeholder">Title</string>
+    //<string name="subtitle_detail_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices congue rutrum. Phasellus elementum ipsum ac convallis aliquam. Suspendisse eleifend eros a enim faucibus mollis. Nunc placerat, est vitae vestibulum blandit, dolor diam fringilla tellus, eu euismod mauris neque at neque.</string>
+    <string name="LoginAnonim"></string>
+    <string name="cancel_account">If you have an account, click the cancel button!</string>
+
+    <string-array name="shopping_item_names">
+    <item>Ring</item>
+    <item>Necklace</item>
+    <item>Bracelet</item>
+    <item>Earrings</item>
+    <item>Ankle chain</item>
+    </string-array>
+
+    <string-array name="shopping_item_desc">
+    <item>This is a ring!</item>
+    <item>This is a necklace!</item>
+    <item>This is a bracelet!</item>
+    <item>This is a earrings!</item>
+    <item>This is a ankle chain!</item>
+    </string-array>
+
+    <array name="shopping_item_rates">
+    <item>2.5</item>
+    <item>3</item>
+    <item>1</item>
+    <item>1.5</item>
+    <item>2</item>
+    <item>3</item>
+    <item>2.5</item>
+    </array>
+
+    //600*600 kép
+    <array name="shopping_item_images">
+    <item>@drawable/ring</item>
+    <item>@drawable/necklace</item>
+    <item>@drawable/bracelet</item>
+    <item>@drawable/earrings</item>
+    <item>@drawable/anklechain</item>
+    </array>
+
+    <array name="shopping_item_price">
+    <item>$1000</item>
+    <item>$800</item>
+    <item>$750</item>
+    <item>$700</item>
+    <item>$500</item>
+    <item>$400</item>
+    <item>$300</item>
+    <item>$200</item>
+    <item>$100</item>
+    <item>$80</item>
+    <item>$50</item>
+    <item>$40</item>
+    </array>
+    </resources>
