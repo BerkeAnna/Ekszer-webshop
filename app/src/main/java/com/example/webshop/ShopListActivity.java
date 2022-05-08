@@ -50,7 +50,7 @@ public class ShopListActivity extends AppCompatActivity {
     private FirebaseFirestore mFirestore;
     private CollectionReference mItems;
 
-//    private NotificationHandler mnotihandler;
+    private NotificationHelper mnotihandler;
 
     private AlarmManager mAlarmManager;
 
@@ -78,7 +78,7 @@ public class ShopListActivity extends AppCompatActivity {
         mFirestore = FirebaseFirestore.getInstance();
         mItems = mFirestore.collection("Items");
 
-//        NotificationHandler mNotificationHendler = new NotificationHandler(this);
+        mnotihandler = new NotificationHelper(this);
         mAlarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 //        setAlarmManager();
 
@@ -272,14 +272,17 @@ public class ShopListActivity extends AppCompatActivity {
         if(0 <cartItems){
             contentTextView.setText(String.valueOf(cartItems));
         }else{
-            contentTextView.setText(String.valueOf(""));
+            contentTextView.setText("");
 
         }
         mItems.document(item._getID()).update("count", item.getCount()+1)
                 .addOnFailureListener( failure -> {
                     Toast.makeText(this, "Item " + item._getID() + " cannot be updated", Toast.LENGTH_LONG).show();
                 });
-        queryData_price();
+
+        mnotihandler.send(item.getName());
+        queryData_ratedinfo();
+
 
     }
 
