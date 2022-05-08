@@ -21,7 +21,6 @@ public class ShoppingItem {
         this.count=count;
     }
 
-    //    adatbázis setter -GUI III. 11.perc
     public String getName() { return name; }
     public String getInfo() { return info; }
     public String getPrice() { return price; }

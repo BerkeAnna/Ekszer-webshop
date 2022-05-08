@@ -11,8 +11,7 @@ public class RandomAsyncTask extends AsyncTask<Void, Void, String> {
 
     private WeakReference<TextView> mTextView;
 
-    // const ami textview-t vár, de előtte ^ gyenge redferenciára rak
-    public RandomAsyncTask(TextView textView){
+     public RandomAsyncTask(TextView textView){
         mTextView= new WeakReference<>(textView);
     }
 
@@ -41,4 +40,3 @@ public class RandomAsyncTask extends AsyncTask<Void, Void, String> {
 }
 
 
-//7.gyak 7.perc

@@ -12,8 +12,7 @@ public class SignupAsyncTask extends AsyncTask<Void, Void, String> {
 
     private WeakReference<TextView> mTextView;
 
-    // const ami textview-t vár, de előtte ^ gyenge redferenciára rak
-    public SignupAsyncTask(TextView textView){
+      public SignupAsyncTask(TextView textView){
         mTextView= new WeakReference<>(textView);
     }
 
@@ -43,4 +42,3 @@ public class SignupAsyncTask extends AsyncTask<Void, Void, String> {
 }
 
 
-//7.gyak 7.perc
